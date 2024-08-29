@@ -1,0 +1,10 @@
+{
+	"intelephense.format.braces": "k&r",
+    "intelephense.environment.phpVersion": "8.2",
+    "php.validate.run": "onType",
+    "phpsab.composerJsonPath": "webroot/composer.json",
+    "phpsab.debug": false,
+    "phpsab.executablePathCBF": "webroot/vendor/bin/phpcbf",
+    "phpsab.executablePathCS": "webroot/vendor/bin/phpcs",
+    "phpsab.autoRulesetSearch": true
+}
