@@ -29,7 +29,7 @@ use Psr\Http\Message\ServerRequestInterface;
  */
 class HomeController {
     
-    private function getInputParams(ServerRequestInterface $request): array {
+    public function getInputParams(ServerRequestInterface $request): array {
         return [
             'mode' => $request->getQueryParams()['mode'] ?? 'historic',
             'zip' => $request->getQueryParams()['zip'] ?? null,
@@ -120,7 +120,7 @@ class HomeController {
 
     private function getWeatherDataFromDB(array $params): ?array {
         $dbConn = DB::conn();
-        $dateStr = date('Y-m-d H:i', strtotime("{$params['date']} {$params['time']}"));
+        $dateStr = date('Y-m-d H:i', timestamp: strtotime("{$params['date']} {$params['time']}"));
 
         $query = "
             SELECT * FROM weather WHERE
@@ -208,4 +208,11 @@ class HomeController {
         $response->getBody()->write($html);
         return $response;
     }
+
+
+    
+
+
+
+
 }
