@@ -16,6 +16,7 @@ $app = AppFactory::create();
 // Define routes:
 $app->get('/', [ HomeController::class, 'index' ]);
 $app->get('/weatherdataHtml', [ HomeController::class, 'getWeatherDataHtml' ]);
+$app->get('/avgWeatherDataHtml', [ HomeController::class, 'getAvgDataHtml' ]);
 
 $app->get('/api/getWeather', [ ApiController::class, 'getWeather' ]);
 
